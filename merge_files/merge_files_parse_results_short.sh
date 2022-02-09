@@ -7,6 +7,7 @@ search_list=("dynamic\spartitions" \
 "Completed\sexecuting\scommand" \
 "Coordinator" \
 "Run\sDAG" \
+"CREATED_DYNAMIC_PARTITIONS" \
 "CREATED_FILES" \
 "CPU_MILLISECONDS" \
 "^ERROR\s\:\sFAILED")
