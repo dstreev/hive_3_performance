@@ -17,12 +17,14 @@ for i in simple mti; do
                         RUN_FILE="merge_files_${i}_${dist}.sql"
                         echo "START >> ${i} ${dist} ${stats} ${d} ${thres}: Run File: ${RUN_FILE}" >> "${TARGET_FILE}"
                         hive --hivevar db=merge_files --hivevar dynamic=$d --hivevar dynamic_threshold=$thres --hivevar gather_stats=false --hivevar version=$stats -i merge_files_init.sql -f $RUN_FILE >> $TARGET_FILE 2>&1
+                        echo "Counts: "`hdfs dfs -count -h /warehouse/tablespace/external/hive/merge_files.db/merge_files_part` >> $TARGET_FILE
                         echo "STOP >> ${i} ${dist} ${stats} ${d} ${thres}" >> "${TARGET_FILE}"
                     done
                 else
                     RUN_FILE="merge_files_${i}_${dist}.sql"
                     echo "START >> ${i} ${dist} ${stats} ${d}: Run File: ${RUN_FILE}" >> "${TARGET_FILE}"
                     hive --hivevar db=merge_files --hivevar dynamic=$d --hivevar dynamic_threshold=-1 --hivevar gather_stats=false --hivevar version=$stats -i merge_files_init.sql -f $RUN_FILE >> $TARGET_FILE 2>&1
+                    echo "Counts: "`hdfs dfs -count -h /warehouse/tablespace/external/hive/merge_files.db/merge_files_part` >> $TARGET_FILE
                     echo "STOP >> ${i} ${dist} ${stats} ${d}" >> "${TARGET_FILE}"
                 fi
             done
