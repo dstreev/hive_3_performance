@@ -18,7 +18,9 @@ search_list=("dynamic\spartitions" \
 "CPU_MILLISECONDS" \
 "SPILLED_RECORDS" \
 "TOTAL_LAUNCHED_TASKS" \
-"GC_TIME_MILLIS")
+"GC_TIME_MILLIS" \
+"TaskCounter" \
+"^ERROR")
 
 FULL_SEARCH=
 for i in "${search_list[@]}"; do
