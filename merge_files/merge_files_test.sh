@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-TARGET_FILE = $HOME/merge_files_test.txt
+TARGET_FILE=$HOME/merge_files_test.txt
 
 # Setup
 echo "Running merge_files Setup" > $TARGET_FILE
