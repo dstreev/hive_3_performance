@@ -22,7 +22,7 @@ search_list=("dynamic\spartitions" \
 
 FULL_SEARCH=
 for i in "${search_list[@]}"; do
-  if [ "${FULL_SEARCH}x" == "x"]; then
+  if [ "${FULL_SEARCH}x" == "x" ]; then
     FULL_SEARCH="${i}"
   else
     FULL_SEARCH="${FULL_SEARCH}\|${i}"
