@@ -20,7 +20,7 @@ search_list=("dynamic\spartitions" \
 "TOTAL_LAUNCHED_TASKS" \
 "GC_TIME_MILLIS" \
 "TaskCounter" \
-"^ERROR")
+"^ERROR\s\:\sFAILED")
 
 FULL_SEARCH=
 for i in "${search_list[@]}"; do
