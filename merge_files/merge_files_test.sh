@@ -14,13 +14,13 @@ for i in simple mti; do
             for d in false true; do
                 if [ $d == "true" ]; then
                     for thres in -1 0 1; do
-                        RUN_FILE=merge_files_$i_$dist.sql
+                        RUN_FILE="merge_files_${i}_${dist}.sql"
                         echo "START >> ${i} ${dist} ${stats} ${d} ${thres}: Run File: ${RUN_FILE}" >> "${TARGET_FILE}"
                         hive --hivevar db=merge_files --hivevar dynamic=$d --hivevar dynamic_threshold=$thres --hivevar gather_stats=false --hivevar version=$stats -i merge_files_init.sql -f $RUN_FILE >> $TARGET_FILE 2>&1
                         echo "STOP >> ${i} ${dist} ${stats} ${d} ${thres}" >> "${TARGET_FILE}"
                     done
                 else
-                    RUN_FILE=merge_files_$i_$dist.sql
+                    RUN_FILE="merge_files_${i}_${dist}.sql"
                     echo "START >> ${i} ${dist} ${stats} ${d}: Run File: ${RUN_FILE}" >> "${TARGET_FILE}"
                     hive --hivevar db=merge_files --hivevar dynamic=$d --hivevar dynamic_threshold=-1 --hivevar gather_stats=false --hivevar version=$stats -i merge_files_init.sql -f $RUN_FILE >> $TARGET_FILE 2>&1
                     echo "STOP >> ${i} ${dist} ${stats} ${d}" >> "${TARGET_FILE}"
