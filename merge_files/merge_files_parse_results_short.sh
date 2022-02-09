@@ -1,25 +1,14 @@
 #!/usr/bin/env sh
 
 search_list=("dynamic\spartitions" \
-"Executing\son\sYARN\scluster\swith\sApp\sid" \
 "^START" \
 "^STOP" \
 "^Counts" \
-"[0..9]\srows\saffected" \
 "Completed\sexecuting\scommand" \
-"Compile\sQuery" \
-"Prepare\sPlan" \
-"Submit\sPlan" \
-"Start\sDAG" \
 "Coordinator" \
 "Run\sDAG" \
-"CREATED_DYNAMIC_PARTITIONS" \
 "CREATED_FILES" \
 "CPU_MILLISECONDS" \
-"ADDITIONAL_SPILL_COUNT" \
-"TOTAL_LAUNCHED_TASKS" \
-"GC_TIME_MILLIS" \
-"TaskCounter" \
 "^ERROR\s\:\sFAILED")
 
 FULL_SEARCH=
